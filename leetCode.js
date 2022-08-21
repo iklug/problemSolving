@@ -31,4 +31,37 @@ const twoSum = (numbers, target) => {
 
 // ----------------------------------------------------
 
+// You are climbing a staircase. It takes n steps to reach the top.
 
+// Each time you can either climb 1 or 2 steps. 
+//In how many distinct ways can you climb to the top?
+//You are climbing a staircase. It takes n steps to reach the top.
+
+// Each time you can either climb 1 or 2 steps.
+// In how many distinct ways can you climb to the top?
+
+const climbStairs = n => {
+    if (n === 1){
+        return 1;
+    }
+    if (n === 2){
+        return 2;
+    }
+   
+    let step1 = 1;
+    let step2 = 2;
+  
+    
+    for (let i=2;i<n;i++){
+      let step3 = step1;
+        step1 = step2;
+        step2+=step3;
+       
+    }
+  return step2;
+}
+
+//as it turns out, because there's only one 2 ways to get to any given step
+// 1 step from one down, or 2 step hop from two down
+//the amount of possibilities are the amount of possibilities for the 2 previous steps
+//added together
