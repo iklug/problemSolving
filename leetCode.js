@@ -119,4 +119,25 @@ const sameLetter = string => {
 
   // +++++++++++++++++
 
-  
+//lets see if i can solve it in a different way.
+//let's say i took the first word and split it.
+// flower flow
+// if string[i] === otherString [i]
+
+const longestCommonPrefix = arr => {
+    
+    for (let i = 1; i<arr.length; i++){
+     for (let j = 0; j < arr[0].length; j++){
+        if (arr[0][j] === arr[i][j]){
+            continue;
+        } else {
+            arr[0] = arr[0].slice(0,j);
+            break;
+        }
+    }
+   
+    }
+   return arr[0];
+}
+
+// a slightly better version, though i'll have to see what the actual smart people do.
