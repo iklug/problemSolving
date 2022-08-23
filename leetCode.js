@@ -65,3 +65,58 @@ const climbStairs = n => {
 // 1 step from one down, or 2 step hop from two down
 //the amount of possibilities are the amount of possibilities for the 2 previous steps
 //added together
+
+// -------------------------------------------------------------------
+
+//14. LONGEST COMMON PREFIX
+
+//Write a function to find the longest common prefix string
+//amongst an array of strings.
+//if there is no common prefix, return empty string.
+
+//1st attempt
+
+const sameLetter = string => {
+    let test = '';
+   for (let i=0; i<string.length; i++){
+    if (test.length === 0){
+      test+= string[i];
+    } 
+     else if (test[i-1] !== string[i]){
+       return false;
+     }
+      else {
+       test+= string[i];
+      }
+     
+     }
+    return true;
+   }
+
+  var longestCommonPrefix = function(array) {
+    let testArray = [];
+  let string = '';
+    for (let j = 0; j<array[0].length; j++){
+      for (let y = 0; y<array.length; y++){
+        if (!testArray[j]){
+        
+          testArray.push(array[y][j]);
+        } else {
+        testArray[j]+=array[y][j]
+        }
+      
+      }
+     
+        if (sameLetter(testArray[j])){
+         string+= testArray[j][0];
+        } else {
+            break;
+        }
+       
+      }
+    return string;
+  };
+
+  // +++++++++++++++++
+
+  
