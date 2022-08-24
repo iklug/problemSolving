@@ -141,3 +141,11 @@ const longestCommonPrefix = arr => {
 }
 
 // a slightly better version, though i'll have to see what the actual smart people do.
+
+// ------------------------------------------
+
+//27. Remove Element
+//Given an integer array nums and an integer val, remove all occurrences of val in nums in-place
+// the relative order of the elements may be changed.
+
+
